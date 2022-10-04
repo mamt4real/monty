@@ -46,6 +46,16 @@ extern unsigned int line;
 extern int quit;
 
 /* =========== Handlers ============ */
+void push_handler(stack_t **, unsigned int);
+void pall_handler(stack_t **, unsigned int);
+void pop_handler(stack_t **, unsigned int);
+void swap_handler(stack_t **, unsigned int);
+void add_handler(stack_t **, unsigned int);
+void nop_handler(stack_t **, unsigned int);
+void sub_handler(stack_t **, unsigned int);
+void mul_handler(stack_t **, unsigned int);
+void div_handler(stack_t **, unsigned int);
+void mod_handler(stack_t **, unsigned int);
 
 
 /* =========== Stack Ops =========== */
