@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define STACK 0
+#define QUEUE 1
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -38,6 +41,9 @@ typedef struct instruction_s
 /* ========== Globals =========== */
 extern stack_t *head;
 extern stack_t *tail;
+extern int mode;
+extern unsigned int line;
+extern int quit;
 
 /* =========== Handlers ============ */
 
@@ -52,11 +58,21 @@ int dequeue();
 void print_queue();
 void enqueue(int n);
 
+/* =========== custome Ops =========== */
+void swap();
+void add_tops();
+void sub_tops();
+void mul_tops();
+void div_tops();
+void mod_tops();
+
 /* ========== File handlers ========= */
 
 
 /* ========== Helpers ========== */
 
 
+/* ========== Memory functions ========== */
+void clear_memory();
 
 #endif /* MAIN_H */
