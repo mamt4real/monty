@@ -1,5 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -29,5 +34,29 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/* ========== Globals =========== */
+extern stack_t *head;
+extern stack_t *tail;
+
+/* =========== Handlers ============ */
+
+
+/* =========== Stack Ops =========== */
+void push(int);
+int pop();
+void print_stack();
+
+/* =========== Queue Ops =========== */
+int dequeue();
+void print_queue();
+void enqueue(int n);
+
+/* ========== File handlers ========= */
+
+
+/* ========== Helpers ========== */
+
+
 
 #endif /* MAIN_H */
