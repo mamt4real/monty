@@ -55,3 +55,18 @@ int _strcmp(char *s1, char *s2)
 	}
 	return (diff);
 }
+
+/**
+ * arrlen - length of array
+ * @args: array
+ * Return: the length
+ */
+
+int arrlen(char **args)
+{
+	int i = 0;
+
+	while(args[i])
+		i++;
+	return (i);
+}
