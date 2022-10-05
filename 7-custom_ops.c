@@ -5,7 +5,7 @@
  */
 void swap(void)
 {
-	int first, second;
+	stack_t *temp;
 
 	if (!global.head || !global.head->next)
 	{
@@ -13,8 +13,10 @@ void swap(void)
 		global.quit = EXIT_FAILURE;
 		return;
 	}
-	first = pop();
-	second = pop();
-	push(first);
-	push(second);
+	temp = global.head->next;
+	global.head->next = temp->next;
+	temp->next = global.head;
+	global.head->prev = temp;
+	temp->prev = NULL;
+	global.head = temp;
 }
