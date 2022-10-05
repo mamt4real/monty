@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 
 	content = read_file(argv[1]);
 	lines = strtow(content, "\n");
+	free(content);
 	if (!lines)
 	{
 		dprintf(2, "Error: malloc failed\n");
