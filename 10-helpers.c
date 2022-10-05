@@ -24,6 +24,9 @@ int is_number(char *str)
 {
 	if (!str)
 		return (0);
+	if (*str == '-' || *str == '+')
+		str++;
+
 	while (*str)
 	{
 		if (!_isdigit(*str))
