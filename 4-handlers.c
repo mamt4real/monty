@@ -48,7 +48,7 @@ void pchr_handler(stack_t **stack, unsigned int line_number)
 		global.quit = EXIT_FAILURE;
 		return;
 	}
-	if ((*stack)->n > 127)
+	if ((*stack)->n > 127 || (*stack)->n < 0)
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 		global.quit = EXIT_FAILURE;
