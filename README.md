@@ -15,4 +15,6 @@ A project to create an interpreter for Monty ByteCodes files
 
 ## Tasks
 
-Task 1 - Implement the push and pall opcodes.
+Task 0 - Implement the push and pall opcodes.
+Task 1 - Implement the pint opcode.
+Task 2 -
