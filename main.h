@@ -7,6 +7,7 @@
 
 #define STACK 0
 #define QUEUE 1
+#define DELIM " \t"
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -20,8 +21,8 @@
 typedef struct stack_s
 {
 	int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -34,16 +35,16 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /* ========== Globals =========== */
 extern stack_t *head;
 extern stack_t *tail;
 extern int mode;
-extern unsigned int line;
 extern int quit;
+extern char *arg;
 
 /* =========== Handlers ============ */
 void push_handler(stack_t **, unsigned int);
@@ -56,33 +57,35 @@ void sub_handler(stack_t **, unsigned int);
 void mul_handler(stack_t **, unsigned int);
 void div_handler(stack_t **, unsigned int);
 void mod_handler(stack_t **, unsigned int);
-
+void pint_handler(stack_t **, unsigned int);
+instruction_t _get_handler(const char *);
 
 /* =========== Stack Ops =========== */
 void push(int);
-int pop();
-void print_stack();
+int pop(void);
+void print_stack(void);
 
 /* =========== Queue Ops =========== */
-int dequeue();
-void print_queue();
-void enqueue(int n);
+int dequeue(void);
+void print_queue(void);
+void enqueue(int);
 
 /* =========== custome Ops =========== */
-void swap();
-void add_tops();
-void sub_tops();
-void mul_tops();
-void div_tops();
-void mod_tops();
+void swap(void);
+void calculator(char, char *,  int);
 
 /* ========== File handlers ========= */
+char *read_file(const char *);
 
+/* ========== Parse functions ========= */
+void parse_instructions(char **);
 
 /* ========== Helpers ========== */
-
+int is_delim(char, char *);
+char **strtow(char *, char *);
 
 /* ========== Memory functions ========== */
-void clear_memory();
+void clear_memory(void);
+void free_tokenized(char **);
 
 #endif /* MAIN_H */

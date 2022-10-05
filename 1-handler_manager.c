@@ -19,6 +19,7 @@ instruction_t _get_handler(const char *opcode)
 		{"swap", swap_handler},
 		{"sub", sub_handler},
 		{"mul", mul_handler},
+		{"pint", pint_handler},
 		{"div", div_handler},
 		{"mod", mod_handler},
 		{NULL, NULL}
@@ -29,6 +30,5 @@ instruction_t _get_handler(const char *opcode)
 		if (strcmp(opcode, handlers[i].opcode) == 0)
 			break;
 	}
-
 	return (handlers[i]);
 }

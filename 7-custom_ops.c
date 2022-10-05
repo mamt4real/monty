@@ -3,7 +3,7 @@
 /**
  * swap - swaps the first two elements
  */
-void swap()
+void swap(void)
 {
 	int temp;
 

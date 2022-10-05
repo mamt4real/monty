@@ -7,7 +7,7 @@
 void push(int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
-	
+
 	if (!new)
 	{
 		/* handle error */
@@ -23,17 +23,14 @@ void push(int n)
 
 /**
  * pop - pops an element from the stack
+ * Return: the value removed
  */
 
-int pop()
+int pop(void)
 {
 	int res;
 	stack_t *temp = head;
 
-	if (!head)
-	{
-		/* handle underflow */
-	}
 	res = head->n;
 	if (head != tail)
 		head->next->prev = 0;
@@ -44,9 +41,14 @@ int pop()
 	return (res);
 }
 
-void print_stack()
+/**
+ * print_stack - prints a stack in LIFO
+ */
+
+void print_stack(void)
 {
 	stack_t *temp = head;
+
 	while (temp)
 	{
 		printf("%d\n", temp->n);

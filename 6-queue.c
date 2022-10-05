@@ -14,7 +14,7 @@ void enqueue(int n)
  *
  * Return: data of element removed
  */
-int dequeue()
+int dequeue(void)
 {
 	int res;
 	stack_t *temp = tail;
@@ -37,9 +37,10 @@ int dequeue()
  * print_queue - print in FIFO
  */
 
-void print_queue()
+void print_queue(void)
 {
 	stack_t *temp = tail;
+
 	while (temp)
 	{
 		printf("%d\n", temp->n);
