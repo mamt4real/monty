@@ -14,7 +14,7 @@ void push_handler(stack_t **s, unsigned int l)
 	if (!global.arg || !is_number(global.arg))
 	{
 		/* error */
-		fprintf(stderr, "L%u: usage: push integer\n");
+		fprintf(stderr, "L%u: usage: push integer\n", l);
 		global.quit = EXIT_FAILURE;
 		return;
 	}
