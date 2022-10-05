@@ -69,7 +69,7 @@ int arrlen(char **args)
 {
 	int i = 0;
 
-	while(args[i])
+	while (args[i])
 		i++;
 	return (i);
 }
