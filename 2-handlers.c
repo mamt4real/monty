@@ -11,9 +11,10 @@ void push_handler(stack_t **s, unsigned int l)
 	(void)s;
 	(void)l;
 
-	if (!global.arg)
+	if (!global.arg || !is_number(global.arg))
 	{
 		/* error */
+		fprintf(stderr, "L%u: usage: push integer\n");
 		global.quit = EXIT_FAILURE;
 		return;
 	}
