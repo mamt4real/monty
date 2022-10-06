@@ -24,6 +24,7 @@ char *read_file(const char *path)
 	if (!string)
 	{
 		/* handle memory */
+		fclose(f);
 		dprintf(2, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
