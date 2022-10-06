@@ -102,9 +102,10 @@ int simple_opcodes(char **);
 /* ========== Helpers ========== */
 int is_delim(char, char *);
 char **strtow(char *, char *);
-int _isdigit(int c);
-int is_number(char *str);
-int arrlen(char **args);
+int _isdigit(int);
+int is_number(char *);
+int arrlen(char **);
+void truncate_on_empty_line(char *);
 
 /* ========== Memory functions ========== */
 void clear_memory(void);

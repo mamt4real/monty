@@ -61,3 +61,33 @@ int is_delim(char c, char *delim)
 			return (1);
 	return (0);
 }
+
+/**
+ * truncate_on_empty_line - truncates a string on the first occurence of blank line
+ * @str: Tye string to truncate
+ */
+void truncate_on_empty_line(char *str)
+{
+	int i = 0;
+
+	while (str[i])
+	{
+		if (str[i] == '\n')
+		{
+			i++;
+			/* skip blank spaces filled */
+			while (str[i] == ' ')
+				i++;
+			/* blank line detected */
+			if (str[i] == '\n')
+			{
+				/* truncate */
+				str[i] = '\0';
+				return;
+			}
+			/* account for terminal \n */
+			continue;
+		}
+		i++;
+	}
+}

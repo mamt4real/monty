@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 	}
 
 	content = read_file(argv[1]);
+	truncate_on_empty_line(content);
 	lines = strtow(content, "\n");
 	free(content);
 	if (!lines)
