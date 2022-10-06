@@ -63,7 +63,8 @@ int is_delim(char c, char *delim)
 }
 
 /**
- * truncate_on_empty_line - truncates a string on the first occurence of blank line
+ * truncate_on_empty_line - truncates 
+ * string on the first occurence of blank line
  * @str: Tye string to truncate
  */
 void truncate_on_empty_line(char *str)
